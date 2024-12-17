@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dançar ao Tocar na Imagem</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .image-container {
+            text-align: center;
+        }
+        img {
+            width: 300px; /* Ajuste o tamanho da imagem conforme necessário */
+            cursor: pointer;
+            transition: transform 0.5s ease; /* Transição suave para a animação */
+        }
+        .dance {
+            animation: dance 0.5s infinite alternate; /* Animação de dança */
+        }
+        @keyframes dance {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(10deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/300" alt="Bicho de Pelúcia" id="dancingImage">
+    </div>
+
+    <script>
+        const image = document.getElementById('dancingImage');
+
+        image.addEventListener('click', () => {
+            image.classList.toggle('dance'); // Alterna a classe 'dance' ao clicar na imagem
+        });
+    </script>
+</body>
+</html>
